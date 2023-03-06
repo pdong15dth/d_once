@@ -3,6 +3,7 @@ import 'package:d_once/presentation/onboarding/onboarding.dart';
 import 'package:d_once/presentation/register_use_phone/register_profile_details/register_profile_details.dart';
 import 'package:d_once/presentation/register_use_phone/register_use_phone.dart';
 import 'package:d_once/presentation/register_use_phone/select_gender/select_gender.dart';
+import 'package:d_once/presentation/register_use_phone/select_passions/select_passion.dart';
 import 'package:d_once/presentation/register_use_phone/sms_code/sms_code.dart';
 import 'package:d_once/presentation/resources/strings_manager.dart';
 import 'package:d_once/presentation/splash/splash.dart';
@@ -24,6 +25,8 @@ class Routes {
       "/registerProfileDetailsRoute"; // update /registerProfileDetailsRoute
   static const String registerSelectGenderRoute =
       "/"; // update /registerSelectGenderRoute
+  static const String registerSelectPassionRoute =
+      "/registerSelectPassionRoute"; // update /registerSelectPassionRoute
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String mainRoute = "/main";
   static const String storeDetailsRoute = "/storeDetails";
@@ -47,8 +50,9 @@ class RouteGenerator {
         return MaterialPageRoute(
             builder: (_) => const RegisterProfileDetailsView());
       case Routes.registerSelectGenderRoute:
-        return MaterialPageRoute(
-            builder: (_) => const SelectGenderView());
+        return MaterialPageRoute(builder: (_) => const SelectGenderView());
+      case Routes.registerSelectPassionRoute:
+        return MaterialPageRoute(builder: (_) => const SelectPassionView());
       default:
         return unDefinedRoute();
     }

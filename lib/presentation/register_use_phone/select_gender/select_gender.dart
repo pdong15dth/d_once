@@ -1,5 +1,6 @@
 import 'package:d_once/presentation/common/navigation_custom/navigation_custom.dart';
 import 'package:d_once/presentation/resources/color_manager.dart';
+import 'package:d_once/presentation/resources/routes_manager.dart';
 import 'package:d_once/presentation/resources/styles_manager.dart';
 import 'package:d_once/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
@@ -108,7 +109,9 @@ class _SelectGenderViewState extends State<SelectGenderView> {
               width: double.infinity,
               height: AppSize.s56,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.registerSelectPassionRoute);
+                },
                 child: Text(
                   "Continue",
                   style: getBoldStyle(color: ColorManager.white, fontSize: 16),
