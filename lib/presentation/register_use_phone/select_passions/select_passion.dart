@@ -1,11 +1,9 @@
 import 'package:d_once/presentation/common/navigation_custom/navigation_custom.dart';
 import 'package:d_once/presentation/resources/color_manager.dart';
+import 'package:d_once/presentation/resources/routes_manager.dart';
 import 'package:d_once/presentation/resources/styles_manager.dart';
 import 'package:d_once/presentation/resources/values_manager.dart';
-import 'package:dartz/dartz_unsafe.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class SelectPassionView extends StatefulWidget {
   const SelectPassionView({super.key});
@@ -141,6 +139,9 @@ class _SelectPassionViewState extends State<SelectPassionView> {
                   passionsSelected.forEach((element) {
                     print(element.title);
                   });
+
+                  Navigator.pushNamed(
+                      context, Routes.registerRequestPermissionFriendsRoute);
                 },
                 child: Text(
                   "Continue",

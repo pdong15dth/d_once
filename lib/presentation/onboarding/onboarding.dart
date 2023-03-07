@@ -83,35 +83,19 @@ class _OnboardingViewState extends State<OnboardingView> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
+              children: List.generate(_list.length, (index) {
+                return Padding(
                   padding: const EdgeInsets.only(
                       left: AppPadding.p4, right: AppPadding.p4),
                   child: Icon(
-                    Icons.circle,
+                    _list[index].title == _currentSlider?.title
+                        ? Icons.circle
+                        : Icons.circle_outlined,
                     size: 8,
                     color: ColorManager.primary,
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: AppPadding.p4, right: AppPadding.p4),
-                  child: Icon(
-                    Icons.circle_outlined,
-                    size: 8,
-                    color: ColorManager.primary,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: AppPadding.p4, right: AppPadding.p4),
-                  child: Icon(
-                    Icons.circle_outlined,
-                    size: 8,
-                    color: ColorManager.primary,
-                  ),
-                ),
-              ],
+                );
+              }),
             ),
             const SizedBox(
               height: AppSize.s20,

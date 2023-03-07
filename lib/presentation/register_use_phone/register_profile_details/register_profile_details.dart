@@ -6,8 +6,6 @@ import 'package:d_once/presentation/resources/routes_manager.dart';
 import 'package:d_once/presentation/resources/styles_manager.dart';
 import 'package:d_once/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class RegisterProfileDetailsView extends StatefulWidget {

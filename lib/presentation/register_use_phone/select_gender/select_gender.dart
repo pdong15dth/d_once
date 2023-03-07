@@ -12,8 +12,19 @@ class SelectGenderView extends StatefulWidget {
   State<SelectGenderView> createState() => _SelectGenderViewState();
 }
 
+class GenderObject {
+  String title;
+  bool selected;
+
+  GenderObject(this.title, {this.selected = false});
+}
+
 class _SelectGenderViewState extends State<SelectGenderView> {
-  final List<String> _genderList = ["Woman", "Man", "Choose another"];
+  final List<GenderObject> _genderList = [
+    GenderObject("Woman"),
+    GenderObject("Man"),
+    GenderObject("Choose another"),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -64,10 +75,17 @@ class _SelectGenderViewState extends State<SelectGenderView> {
                             height: 56,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: index == 1
+                                  backgroundColor: _genderList[index].selected
                                       ? ColorManager.primary
                                       : ColorManager.white),
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  _genderList.forEach((element) {
+                                    element.selected = false;
+                                  });
+                                  _genderList[index].selected = true;
+                                });
+                              },
                               child: Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 8.0),
@@ -77,16 +95,16 @@ class _SelectGenderViewState extends State<SelectGenderView> {
                                   textDirection: TextDirection.ltr,
                                   children: [
                                     Text(
-                                      _genderList[index],
+                                      _genderList[index].title,
                                       style: getBoldStyle(
-                                          color: index == 1
+                                          color: _genderList[index].selected
                                               ? ColorManager.white
                                               : ColorManager.black,
                                           fontSize: 16),
                                     ),
                                     Icon(
                                       Icons.check,
-                                      color: index == 1
+                                      color: _genderList[index].selected
                                           ? ColorManager.white
                                           : ColorManager.blackOpacity40,
                                     ),
@@ -110,7 +128,8 @@ class _SelectGenderViewState extends State<SelectGenderView> {
               height: AppSize.s56,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, Routes.registerSelectPassionRoute);
+                  Navigator.pushNamed(
+                      context, Routes.registerSelectPassionRoute);
                 },
                 child: Text(
                   "Continue",
