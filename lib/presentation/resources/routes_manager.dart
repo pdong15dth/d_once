@@ -3,7 +3,7 @@ import 'package:d_once/presentation/onboarding/onboarding.dart';
 import 'package:d_once/presentation/register_use_phone/permission_friends/permission_friends.dart';
 import 'package:d_once/presentation/register_use_phone/permission_notifications/permission_notifications.dart';
 import 'package:d_once/presentation/register_use_phone/register_profile_details/register_profile_details.dart';
-import 'package:d_once/presentation/register_use_phone/register_use_phone.dart';
+import 'package:d_once/presentation/register_use_phone/register_use_phone_email.dart';
 import 'package:d_once/presentation/register_use_phone/select_gender/select_gender.dart';
 import 'package:d_once/presentation/register_use_phone/select_passions/select_passion.dart';
 import 'package:d_once/presentation/register_use_phone/sms_code/sms_code.dart';
@@ -23,6 +23,8 @@ class Routes {
       "/registerUsePhone"; // update /registerUsePhone
   static const String registerUsePhoneSMSRoute =
       "/registerUsePhoneSMSRoute"; // update /registerUsePhoneSMSRoute
+  static const String registerUseEmailSMSRoute =
+      "/registerUseEmailSMSRoute"; // update /registerUseEmailSMSRoute
   static const String registerProfileDetailsRoute =
       "/registerProfileDetailsRoute"; // update /registerProfileDetailsRoute
   static const String registerSelectGenderRoute =
@@ -49,7 +51,17 @@ class RouteGenerator {
         //initLoginModule(); // init viewmodel by DI
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.registerUsePhoneRoute:
-        return MaterialPageRoute(builder: (_) => const RegisterUsePhoneView());
+        return MaterialPageRoute(
+          builder: (_) => RegisterUsePhoneOrEmailView(
+            type: RegisterType.Phone,
+          ),
+        );
+      case Routes.registerUseEmailSMSRoute:
+        return MaterialPageRoute(
+          builder: (_) => RegisterUsePhoneOrEmailView(
+            type: RegisterType.Email,
+          ),
+        );
       case Routes.registerUsePhoneSMSRoute:
         return MaterialPageRoute(builder: (_) => const SMSCodeView());
       case Routes.registerProfileDetailsRoute:

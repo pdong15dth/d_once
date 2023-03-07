@@ -65,7 +65,10 @@ class _LoginViewState extends State<LoginView> {
                     width: double.infinity,
                     height: AppSize.s56,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(
+                            context, Routes.registerUseEmailSMSRoute);
+                      },
                       child: const Text("Continue with email"),
                     ),
                   ),
@@ -74,7 +77,8 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, Routes.registerUsePhoneRoute);
+                      Navigator.pushReplacementNamed(
+                          context, Routes.registerUsePhoneRoute);
                     },
                     child: Text(
                       "Use phone number",
