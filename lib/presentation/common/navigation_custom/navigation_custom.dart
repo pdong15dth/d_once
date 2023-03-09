@@ -3,11 +3,19 @@ import 'package:d_once/presentation/resources/font_manager.dart';
 import 'package:d_once/presentation/resources/styles_manager.dart';
 import 'package:flutter/material.dart';
 
+class TitleNavigationObject {
+  String? title;
+  String? subTitle;
+
+  TitleNavigationObject({required this.title, required this.subTitle});
+}
+
 class NavigationCustomView extends StatefulWidget {
   var displayBack;
   var displayTitle;
   var displaySettingButton;
   var displaySettingTitle;
+  TitleNavigationObject? titleNavigationObject;
   final VoidCallback onPressedBack;
   final VoidCallback onPressedSetting;
 
@@ -15,6 +23,7 @@ class NavigationCustomView extends StatefulWidget {
     Key? key,
     this.displayBack = true,
     required this.displayTitle,
+    this.titleNavigationObject,
     required this.displaySettingButton,
     this.displaySettingTitle = "",
     required this.onPressedBack,
@@ -66,12 +75,12 @@ class _NavigationCustomViewState extends State<NavigationCustomView> {
             child: Column(
               children: [
                 Text(
-                  "Discover",
+                  widget.titleNavigationObject?.title ?? "",
                   style: getBoldStyle(
                       color: ColorManager.black, fontSize: FontSize.s24),
                 ),
                 Text(
-                  "Chicago, II",
+                  widget.titleNavigationObject?.subTitle ?? "",
                   style: getRegularStyle(
                       color: ColorManager.blackOpacity70,
                       fontSize: FontSize.s12),

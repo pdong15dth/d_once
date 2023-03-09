@@ -20,12 +20,13 @@ ThemeData getApplicationTheme() {
         elevation: AppSize.s4),
     // App bar theme
     appBarTheme: AppBarTheme(
-        centerTitle: true,
-        color: ColorManager.primary,
-        elevation: AppSize.s4,
-        shadowColor: ColorManager.primaryOpacity70,
-        titleTextStyle:
-            getRegularStyle(color: ColorManager.white, fontSize: FontSize.s16)),
+      centerTitle: true,
+      color: ColorManager.primary,
+      elevation: AppSize.s4,
+      shadowColor: ColorManager.primaryOpacity70,
+      titleTextStyle:
+          getRegularStyle(color: ColorManager.white, fontSize: FontSize.s16),
+    ),
     // Button theme
     buttonTheme: ButtonThemeData(
         shape: const StadiumBorder(),
@@ -36,7 +37,8 @@ ThemeData getApplicationTheme() {
     // elevated button theme
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-      textStyle: getBoldStyle(color: ColorManager.white, fontSize: FontSize.s16),
+      textStyle:
+          getBoldStyle(color: ColorManager.white, fontSize: FontSize.s16),
       backgroundColor: ColorManager.primary,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppSize.s15),
@@ -53,8 +55,8 @@ ThemeData getApplicationTheme() {
             getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s16),
         headlineMedium: getRegularStyle(
             color: ColorManager.primary, fontSize: FontSize.s14),
-        titleMedium: getMediumStyle(
-            color: ColorManager.black, fontSize: FontSize.s14),
+        titleMedium:
+            getMediumStyle(color: ColorManager.black, fontSize: FontSize.s14),
         titleSmall:
             getMediumStyle(color: ColorManager.primary, fontSize: FontSize.s14),
         bodyMedium: getMediumStyle(color: ColorManager.lightGrey),
@@ -74,7 +76,8 @@ ThemeData getApplicationTheme() {
 
       // enabled border
       enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: ColorManager.greyBorder, width: AppSize.s1_5),
+          borderSide:
+              BorderSide(color: ColorManager.greyBorder, width: AppSize.s1_5),
           borderRadius: const BorderRadius.all(
             Radius.circular(AppSize.s8),
           )),
