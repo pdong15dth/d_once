@@ -1,6 +1,7 @@
 import 'package:d_once/presentation/home/home.dart';
 import 'package:d_once/presentation/login/login.dart';
 import 'package:d_once/presentation/main_tabbar_controller/main_tabbar_controller.dart';
+import 'package:d_once/presentation/match_friend/match_friend.dart';
 import 'package:d_once/presentation/onboarding/onboarding.dart';
 import 'package:d_once/presentation/register_use_phone/permission_friends/permission_friends.dart';
 import 'package:d_once/presentation/register_use_phone/permission_notifications/permission_notifications.dart';
@@ -38,7 +39,8 @@ class Routes {
   static const String registerRequestPermissionNotificationsRoute =
       "/registerRequestPermissionNotificationsRoute"; // update /registerRequestPermissionNotificationsRoute
   static const String forgotPasswordRoute = "/forgotPassword";
-  static const String mainRoute = "/"; // update /main
+  static const String mainRoute = "/main"; // update /main
+  static const String matchFriendRoute = "/matchFriendRoute"; // update /main
   static const String storeDetailsRoute = "/storeDetails";
 }
 
@@ -80,8 +82,9 @@ class RouteGenerator {
         return MaterialPageRoute(
             builder: (_) => const RequestPermissionNotificationView());
       case Routes.mainRoute:
-        return MaterialPageRoute(
-            builder: (_) => const MainTabbarController());
+        return MaterialPageRoute(builder: (_) => const MainTabbarController());
+      case Routes.matchFriendRoute:
+        return MaterialPageRoute(builder: (_) => const MatchFriendView());
 
       default:
         return unDefinedRoute();
